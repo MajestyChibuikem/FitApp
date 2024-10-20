@@ -1,0 +1,83 @@
+Test Plan for Fit Track Mobile Application
+1. Introduction:
+This test plan defines the strategy for testing the Fit Track Mobile Application to ensure it fulfills both functional and non-functional requirements. Fit Track is a fitness app designed to help users set and monitor fitness goals, track calories burned through different exercises, and manage their progress. The purpose of this test plan is to confirm that the app operates as intended, offering users a reliable, secure, and accurate fitness tracking experience.
+
+2. Scope:
+Testing will focus on the core functionalities of the Fit Track application. This includes user authentication (login and registration), the creation of calorie goals, tracking calorie burn history and progress, and calorie calculation. The testing will also ensure the user interface is easy to use, input validation works correctly, and calorie calculations are accurate. Both manual and automated testing methods will be applied to different areas of the application.
+
+3. Objectives:
+The main objectives of this test plan are to:
+
+Confirm that users can successfully log in and register.
+Ensure users can create personalized calorie goals and track fitness activities.
+Verify that calories burned are accurately calculated based on input data (e.g., time, distance).
+Validate all input fields, such as username, password, and activity details, to ensure proper formatting.
+Ensure that the app performs consistently across various scenarios and devices.
+Key Performance Indicators (KPIs):
+
+95% of critical test cases must pass.
+No unresolved critical issues (e.g., crashes, incorrect calorie calculations) should remain before release.
+Input validation must prevent invalid entries in 100% of test cases.
+4. Features to be Tested:
+User Login: Test the login functionality to ensure users can log in with valid credentials, and error messages appear for invalid credentials.
+User Registration: Confirm that new users can register by providing valid data (e.g., username, password, email). Error messages should be displayed for missing or invalid inputs.
+Goal Creation: Verify that users can create, modify, and persist calorie goals across sessions.
+Calorie Calculation: Test various exercise activities (e.g., running, walking, swimming) to ensure calories are calculated correctly based on user input.
+Input Validators: Ensure that input fields have proper validation (e.g., character limits, format checks) and that error messages are shown for invalid entries.
+5. Test Environment:
+Hardware:
+
+Desktop and mobile devices that meet Fit Track's minimum system requirements.
+Example Devices: Windows 11 desktop with .NET 6.0 installed.
+Operating System:
+
+Primary OS: Windows 11 (for desktop testing).
+Software:
+
+Fit Tracker Application, Version 1.0.
+Development IDE: Visual Studio 2022.
+.NET 6.0 for runtime compatibility.
+Network:
+
+No specific network requirements for initial testing.
+7. Risk Analysis:
+Potential Risks:
+
+Device Compatibility: Older or lower-performing devices may struggle to handle the app, leading to slower performance or unresponsive UI elements.
+Incorrect Calorie Calculations: Flaws in the calorie calculation algorithm may lead to inaccurate data, affecting user trust.
+Input Validation Issues: Improper validation could allow incorrect data entry, which may cause problems with app functionality.
+Mitigation:
+
+Optimize with .NET 6.0: The use of .NET 6.0 ensures better compatibility and performance improvements for desktop applications.
+Cross-Platform Testing: Conduct tests on multiple operating system versions to ensure consistency across platforms.
+Use Mock Data for Testing: Implement mock data for calorie calculations and input validation to ensure correctness.
+Automated Tests for Validation: Develop automated tests to check edge cases in input validation and run them throughout the testing phase.
+8. Test Approach:
+Manual Testing:
+
+UI/UX Testing: Manually test the user interface to confirm it offers a smooth, intuitive experience, ensuring proper navigation, goal creation, and progress visualization across devices.
+Functional Testing: Verify all core features, including login, registration, goal creation, and calorie calculation, ensuring they work as expected. Each test case will have detailed steps and expected outcomes.
+Automated Testing:
+
+Unit Testing for Core Logic: Test the calorie calculation functions through unit testing to confirm their accuracy under different input conditions.
+Integration Testing: Ensure different modules (e.g., user authentication, goal creation) function correctly together.
+Regression Testing: Build automated regression tests to ensure new code changes do not break existing functionality.
+Performance Testing: Evaluate the app’s performance, especially its response time during login, registration, and calorie calculations.
+Test Execution:
+
+Test Case Design: Design comprehensive test cases for each feature to cover all user interactions, including edge cases such as invalid inputs and extreme values.
+Execution Priority: Execute tests for critical features (e.g., login, registration) first, followed by goal creation and calorie calculation.
+Bug Reporting:
+
+All identified bugs will be logged in a bug-tracking system (e.g., Jira, Bugzilla), providing detailed information such as steps to reproduce, severity, and screenshots.
+Severity Levels: Bugs will be categorized based on their impact (critical, major, minor), with critical issues addressed before other problems.
+
+
+Conclusion:
+This test plan for the Fit Track Mobile Application provides a structured approach to testing the app’s key features. By thoroughly covering user authentication, goal creation, and calorie calculation, this plan aims to ensure the app’s reliability, usability, and accuracy. The combination of manual and automated testing, alongside effective risk mitigation, will guarantee the app meets all user expectations before its release.
+
+
+
+
+
+

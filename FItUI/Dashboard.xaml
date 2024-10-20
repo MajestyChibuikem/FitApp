@@ -1,0 +1,106 @@
+﻿<Window x:Class="UI.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dashboard" Height="600" Width="800"
+        Background="#E8F5E9" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- Image at the top -->
+        <Image Source="C:\Users\MAJESTY\source\repos\fittrack\FItUI\Resources\fitness_dashboard.jpg" 
+               Height="150" 
+               Stretch="Uniform" 
+               Grid.Row="0"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" />
+        <!-- Scrollable StackPanel for content -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Margin="20" VerticalAlignment="Stretch">
+                <!-- Welcome Text -->
+                <TextBlock Text="Welcome, " 
+                           FontSize="24" FontWeight="Bold" 
+                           Foreground="#388E3C" 
+                           HorizontalAlignment="Center" />
+                <TextBlock Name="UsernameTextBlock" 
+                           FontSize="24" FontWeight="Bold" 
+                           Foreground="#388E3C" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,20"/>
+                <TextBlock Text="Set Your Expected Calorie Burn:" FontSize="16" Foreground="#388E3C"/>
+                <TextBox x:Name="ExpectedCaloriesTextBlock" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,20" Padding="5"/>
+                <Button Content="Set Goal" Width="100" Height="40" Background="#388E3C" Foreground="White" HorizontalAlignment="Center" Click="SetCalorieGoal_Click"/>
+                <TextBlock Text="Total Calories Burned:" FontSize="16" Foreground="#388E3C"/>
+                <TextBlock x:Name="CaloriesBurnedTextBlock" FontSize="16" Foreground="#388E3C" Margin="0,0,0,20"/>
+                <!-- Calories and Activities Section -->
+
+                <TextBlock Text="Activities:" FontSize="16" Foreground="#388E3C"/>
+                <ListBox x:Name="GoalListBox" 
+                         SelectionChanged="GoalListBox_SelectionChanged" 
+                         Background="#C8E6C9" 
+                         Margin="0,0,0,20">
+                    <ListBoxItem Content="Walk"/>
+                    <ListBoxItem Content="Swim"/>
+                    <ListBoxItem Content="Jumping"/>
+                    <ListBoxItem Content="Cycling"/>
+                    <ListBoxItem Content="Running"/>
+                </ListBox>
+                <!-- Walk Parameters -->
+                <StackPanel x:Name="WalkParameters" Visibility="Collapsed">
+                    <TextBlock Text="Steps" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="StepsInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Distance" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="DistanceInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Time" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="TimeInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,20" Padding="5"/>
+
+                </StackPanel>
+                <!-- Swim Parameters -->
+                <StackPanel x:Name="SwimParameters" Visibility="Collapsed">
+                    <TextBlock Text="AHR" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="AHRInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Laps" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="LapsInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Distance" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="SwimDistanceInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,20" Padding="5"/>
+                </StackPanel>
+                <!-- Jump Parameters -->
+                <StackPanel x:Name="JumpParameters" Visibility="Collapsed">
+                    <TextBlock Text="Jumps" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="JumpsInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Time" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="JumpTimeInput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                </StackPanel>
+                <!-- Cycle Parameters -->
+                <StackPanel x:Name="CycleParameters" Visibility="Collapsed">
+                    <TextBlock Text="Distance" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="distanceinput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Time" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="timeinput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                </StackPanel>
+                <!-- Running Parameters -->
+                <StackPanel x:Name="RunningParameters" Visibility="Collapsed">
+                    <TextBlock Text="Distance" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="running_distanceinput" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                    <TextBlock Text="Time" FontSize="16" Foreground="#388E3C"/>
+                    <TextBox x:Name="running_input" Width="300" Height="30" Background="#C8E6C9" Margin="0,0,0,10" Padding="5"/>
+                </StackPanel>
+                <!-- Buttons and Progress Section -->
+                <Button Content="Get Calories" 
+                        Click="CalcCal_Click" 
+                        Width="100" 
+                        Height="40" 
+                        Background="#388E3C" 
+                        Foreground="White" 
+                        HorizontalAlignment="Center" 
+                        Margin="0,0,0,20"/>
+                <!-- Goal Progress Label -->
+                <TextBlock Text="Goal Progress:" FontSize="16" Foreground="#388E3C" Margin="20,0,0,0"/>
+                <!-- Goal Progress ListBox -->
+                <ListBox Name="GoalProgressListBox" FontSize="16" Foreground="#388E3C" Margin="0,0,0,20" Background="#C8E6C9"/>
+                <Button Content="Refresh" Width="100" Height="40" Background="#388E3C" Foreground="White" HorizontalAlignment="Center" Click="RefreshButton_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
